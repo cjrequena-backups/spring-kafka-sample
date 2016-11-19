@@ -1,0 +1,10 @@
+info:
+  description: Spring Kafka Sample
+  version: 1.0
+server:
+  port: 8080
+  contextPath: /
+---
+kafka:
+  bootstrap:
+    servers: localhost:9092
