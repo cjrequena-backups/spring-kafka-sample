@@ -20,8 +20,8 @@ public class KafkaPublisherConfiguration {
     private String bootstrapServers;
 
     @Bean
-    public Map producerConfigs() {
-        Map props = new HashMap<>();
+    public Map<String, Object> producerConfigs() {
+        Map<String, Object> props = new HashMap<>();
         // list of host:port pairs used for establishing the initial connectionsto the Kakfa cluster
         props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers);
         props.put(ProducerConfig.RETRIES_CONFIG, 0);
@@ -37,13 +37,13 @@ public class KafkaPublisherConfiguration {
     }
 
     @Bean
-    public ProducerFactory producerFactory() {
+    public ProducerFactory<Integer, String> producerFactory() {
         return new DefaultKafkaProducerFactory<>(producerConfigs());
     }
 
     @Bean
-    public KafkaTemplate kafkaTemplate() {
-        return new KafkaTemplate(producerFactory());
+    public KafkaTemplate<Integer, String> kafkaTemplate() {
+        return new KafkaTemplate<>(producerFactory());
     }
 
 //    @Bean

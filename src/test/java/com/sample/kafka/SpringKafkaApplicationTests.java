@@ -1,7 +1,5 @@
 package com.sample.kafka;
 
-import static org.assertj.core.api.Assertions.assertThat;
-
 import com.sample.kafka.dto.SampleDTO;
 import com.sample.kafka.service.KafkaConsumer;
 import com.sample.kafka.service.KafkaPublisher;
@@ -12,6 +10,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.concurrent.TimeUnit;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 
 @RunWith(SpringRunner.class)
