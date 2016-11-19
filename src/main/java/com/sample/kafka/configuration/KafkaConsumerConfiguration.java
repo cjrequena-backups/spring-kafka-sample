@@ -1,6 +1,7 @@
 package com.sample.kafka.configuration;
 
 import com.sample.kafka.dto.SampleDTODeserializer;
+import com.sample.kafka.service.KafkaConsumer;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.common.serialization.IntegerDeserializer;
 import org.apache.kafka.common.serialization.StringDeserializer;
@@ -29,13 +30,14 @@ public class KafkaConsumerConfiguration {
         Map props = new HashMap<>();
         // list of host:port pairs used for establishing the initial connections to the Kakfa cluster
         props.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers);
-        // consumer groups allow a pool of processes to divide the work of consuming and processing records
-        props.put(ConsumerConfig.GROUP_ID_CONFIG, "helloworld");
+        props.put(ConsumerConfig.ENABLE_AUTO_COMMIT_CONFIG, false);
+        props.put(ConsumerConfig.AUTO_COMMIT_INTERVAL_MS_CONFIG, "100");
+        props.put(ConsumerConfig.SESSION_TIMEOUT_MS_CONFIG, "15000");
         props.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, IntegerDeserializer.class);
         //props.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, SampleDTODeserializer.class);
         props.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG,  StringDeserializer.class);
-        props.put(ConsumerConfig.ENABLE_AUTO_COMMIT_CONFIG, false);
-        props.put(ConsumerConfig.SESSION_TIMEOUT_MS_CONFIG, "15000");
+        props.put(ConsumerConfig.GROUP_ID_CONFIG, "group1");
+        props.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "earliest");
 
         return props;
     }
@@ -53,8 +55,8 @@ public class KafkaConsumerConfiguration {
         return factory;
     }
 
-//    @Bean
-//    public KafkaConsumer kafkaConsumer() {
-//        return new KafkaConsumer();
-//    }
+    @Bean
+    public KafkaConsumer kafkaConsumer() {
+        return new KafkaConsumer();
+    }
 }

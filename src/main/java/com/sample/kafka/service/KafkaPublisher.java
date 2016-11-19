@@ -43,7 +43,7 @@ public class KafkaPublisher {
 
                     @Override
                     public void onSuccess(SendResult<Integer, String> result) {
-                        log.info("sent message='{}' with offset={}", message, result.getRecordMetadata().offset());
+                        log.debug("sent message='{}' with offset={}", message, result.getRecordMetadata().offset());
                     }
 
                     @Override

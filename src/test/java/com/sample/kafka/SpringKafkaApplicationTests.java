@@ -26,7 +26,7 @@ public class SpringKafkaApplicationTests {
 
     @Test
     public void testReceiver() throws Exception {
-        kafkaPublisher.sendMessage("helloworld.t", new SampleDTO("ID","NAME"));
+        kafkaPublisher.sendMessage("sample.topic", new SampleDTO("ID","NAME"));
 
         kafkaConsumer.getLatch().await(10000, TimeUnit.MILLISECONDS);
         assertThat(kafkaConsumer.getLatch().getCount()).isEqualTo(0);
