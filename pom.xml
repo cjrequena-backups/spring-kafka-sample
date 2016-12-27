@@ -180,7 +180,7 @@
                         <pushReleases>true</pushReleases>
                         <pushHotfixes>true</pushHotfixes>
                         <noDeploy>true</noDeploy>
-                        <squash>true</squash>
+                        <squash>false</squash>
                     </configuration>
                 </plugin>
                 <plugin>
