@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.sample</groupId>
     <artifactId>spring-kafka-sample</artifactId>
@@ -95,6 +96,11 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.apache.maven.scm</groupId>
+            <artifactId>maven-scm-provider-gitexe</artifactId>
+            <version>1.9.5</version>
+        </dependency>
     </dependencies>
     <build>
         <pluginManagement>
@@ -158,14 +164,20 @@
                     <artifactId>jgitflow-maven-plugin</artifactId>
                     <version>1.0-m5.1</version>
                     <configuration>
-                        <!--<flowInitContext>-->
-                            <!--<masterBranchName>master</masterBranchName>-->
-                            <!--<developBranchName>development</developBranchName>-->
-                            <!--<featureBranchPrefix>feature-</featureBranchPrefix>-->
-                            <!--<releaseBranchPrefix>release-</releaseBranchPrefix>-->
-                            <!--<hotfixBranchPrefix>hotfix-</hotfixBranchPrefix>-->
-                            <!--<versionTagPrefix>version-</versionTagPrefix>-->
-                        <!--</flowInitContext>-->
+                        <enableSshAgent>true</enableSshAgent>
+                        <autoVersionSubmodules>true</autoVersionSubmodules>
+                        <pushFeatures>true</pushFeatures>
+                        <pushReleases>true</pushReleases>
+                        <pushHotfixes>true</pushHotfixes>
+                        <noDeploy>false</noDeploy>
+                        <flowInitContext>
+                            <masterBranchName>master</masterBranchName>
+                            <developBranchName>development</developBranchName>
+                            <featureBranchPrefix>feature-</featureBranchPrefix>
+                            <releaseBranchPrefix>release-</releaseBranchPrefix>
+                            <hotfixBranchPrefix>hotfix-</hotfixBranchPrefix>
+                            <versionTagPrefix>version-</versionTagPrefix>
+                        </flowInitContext>
                         <enableSshAgent>true</enableSshAgent>
                         <autoVersionSubmodules>true</autoVersionSubmodules>
                         <pushFeatures>true</pushFeatures>
@@ -183,7 +195,6 @@
                         <dependency>
                             <groupId>org.apache.maven.scm</groupId>
                             <artifactId>maven-scm-provider-gitexe</artifactId>
-                            <version>1.9.1</version>
                         </dependency>
                     </dependencies>
                 </plugin>
