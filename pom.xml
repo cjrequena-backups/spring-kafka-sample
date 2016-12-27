@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.sample</groupId>
     <artifactId>spring-kafka-sample</artifactId>
-    <version>1.0.2</version>
+    <version>1.0.3</version>
     <packaging>jar</packaging>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -172,10 +172,7 @@
                         <flowInitContext>
                             <masterBranchName>master</masterBranchName>
                             <developBranchName>develop</developBranchName>
-                            <featureBranchPrefix>feature-</featureBranchPrefix>
-                            <releaseBranchPrefix>release-</releaseBranchPrefix>
-                            <hotfixBranchPrefix>hotfix-</hotfixBranchPrefix>
-                            <versionTagPrefix>v-</versionTagPrefix>
+                            <versionTagPrefix>v</versionTagPrefix>
                         </flowInitContext>
                         <enableSshAgent>false</enableSshAgent>
                         <autoVersionSubmodules>true</autoVersionSubmodules>
