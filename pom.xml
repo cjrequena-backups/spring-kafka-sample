@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.sample</groupId>
     <artifactId>spring-kafka-sample</artifactId>
-    <version>1.0.4</version>
+    <version>1.0.5</version>
     <packaging>jar</packaging>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -180,7 +180,7 @@
                         <pushReleases>true</pushReleases>
                         <pushHotfixes>true</pushHotfixes>
                         <noDeploy>true</noDeploy>
-                        <squash>true</squash>
+                        <squash>false</squash>
                     </configuration>
                 </plugin>
                 <plugin>
