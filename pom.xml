@@ -219,20 +219,6 @@
                         <pushReleases>true</pushReleases>
                         <pushHotfixes>true</pushHotfixes>
                         <noDeploy>false</noDeploy>
-                        <flowInitContext>
-                            <masterBranchName>master</masterBranchName>
-                            <developBranchName>develop</developBranchName>
-                            <versionTagPrefix>v</versionTagPrefix>
-                        </flowInitContext>
-                        <enableSshAgent>false</enableSshAgent>
-                        <autoVersionSubmodules>true</autoVersionSubmodules>
-                        <pushFeatures>true</pushFeatures>
-                        <pushReleases>true</pushReleases>
-                        <pushHotfixes>true</pushHotfixes>
-                        <noDeploy>true</noDeploy>
-                        <squash>false</squash>
-                        <buildNumberVersionSuffix>-</buildNumberVersionSuffix>
-                        <buildNumber>${git.commit.id.abbrev}</buildNumber>
                     </configuration>
                 </plugin>
                 <!-- -->
