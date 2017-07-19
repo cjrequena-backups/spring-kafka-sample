@@ -13,24 +13,24 @@ import java.util.concurrent.CountDownLatch;
 
 @Log4j2
 //@Service
-public class KafkaConsumer {
+public class KafkaSubscriber {
 
     private CountDownLatch latch = new CountDownLatch(1);
 
 //    @KafkaListener(topics = "sample.topic")
-//    public void receiveMessage(SampleDTO dto) {
+//    public void getMessage(SampleDTO dto) {
 //        log.info("received message='{}'", dto);
 //        latch.countDown();
 //    }
 
 //    @KafkaListener(topics = "sample.topic")
-//    public void receiveMessage(String message) {
+//    public void getMessage(String message) {
 //        log.info("received message='{}'", message);
 //        latch.countDown();
 //    }
 
     @KafkaListener(id = "test", topics = "sample.topic", group = "group1")
-    public void consumeInMessage(@Payload String data,
+    public void getMessage(@Payload String data,
                                  @Header(KafkaHeaders.RECEIVED_TOPIC) String topic,
                                  @Header(KafkaHeaders.RECEIVED_PARTITION_ID) String partitionId,
                                  Acknowledgment ack) {

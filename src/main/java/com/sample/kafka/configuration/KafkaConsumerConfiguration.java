@@ -1,6 +1,6 @@
 package com.sample.kafka.configuration;
 
-import com.sample.kafka.service.KafkaConsumer;
+import com.sample.kafka.service.KafkaSubscriber;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.common.serialization.IntegerDeserializer;
 import org.apache.kafka.common.serialization.StringDeserializer;
@@ -55,7 +55,7 @@ public class KafkaConsumerConfiguration {
     }
 
     @Bean
-    public KafkaConsumer kafkaConsumer() {
-        return new KafkaConsumer();
+    public KafkaSubscriber kafkaConsumer() {
+        return new KafkaSubscriber();
     }
 }
