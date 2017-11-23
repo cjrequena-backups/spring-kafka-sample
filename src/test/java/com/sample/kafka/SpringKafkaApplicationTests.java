@@ -1,7 +1,7 @@
 package com.sample.kafka;
 
 import com.sample.kafka.dto.SampleDTO;
-import com.sample.kafka.service.KafkaConsumer;
+import com.sample.kafka.service.KafkaSubscriber;
 import com.sample.kafka.service.KafkaPublisher;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -22,7 +22,7 @@ public class SpringKafkaApplicationTests {
     private KafkaPublisher kafkaPublisher;
 
     @Autowired
-    private KafkaConsumer kafkaConsumer;
+    private KafkaSubscriber kafkaConsumer;
 
     @Test
     public void testReceiver() throws Exception {
